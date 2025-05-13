@@ -46,7 +46,7 @@ const animationNavbar = {
         <AnimatePresence client:visible>
             <div
                 id="menu-container"
-                class="absolute top-12 left-0 right-0 bg-opacity-90 backdrop-blur-sm md:backdrop-blur-none md:bg-transparent md:static md:items-center md:gap-4 md:w-auto hidden md:block"
+                class="absolute top-16 left-0 right-0 bg-white bg-opacity-95 backdrop-blur-md z-40 md:backdrop-blur-none md:bg-transparent md:static md:items-center md:gap-4 md:w-auto hidden md:block"
             >
                 <ul
                     class="flex flex-col p-4 md:p-0 md:flex-row md:space-x-8 md:space-y-0 space-y-4"
@@ -94,7 +94,7 @@ const animationNavbar = {
         if (btnMenu && menuContainer) {
             btnMenu.addEventListener('click', () => {
                 menuContainer.classList.toggle('hidden');
-                // menuContainer.classList.toggle('block');
+                menuContainer.classList.toggle('block');
             });
         }
 

@@ -1,7 +1,5 @@
 ---
 import { Image } from "astro:assets";
-import ImageQr1 from "../img/qr-1.webp";
-import ImageQr2 from "../img/qr-2.webp";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
@@ -31,7 +29,7 @@ import { Reveal } from "./Reveal";
 
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
             <Transition client:visible>
-                <Map client:visible />
+                <Map />
             </Transition>
 
             <Reveal client:visible>
@@ -43,7 +41,7 @@ import { Reveal } from "./Reveal";
                     >
                         <div class="text-center">
                             <Image
-                                src={ImageQr1}
+                                src="/qr-1.webp"
                                 alt="QR Atención al cliente"
                                 width={200}
                                 height={200}
@@ -52,7 +50,7 @@ import { Reveal } from "./Reveal";
                         </div>
                         <div class="text-center">
                             <Image
-                                src={ImageQr2}
+                                src="/qr-2.webp"
                                 alt="QR Whatsapp"
                                 width={200}
                                 height={200}
