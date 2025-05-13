@@ -1,0 +1,94 @@
+---
+import Header from "@components/Header/Header.astro";
+import Layout from "../layouts/Layout.astro";
+import Footer from "@components/Footer.astro";
+import products from "../config/products.json";
+import { Image } from "astro:assets";
+
+// Importa todas tus imágenes
+import bolsaBasura from "src/img/products/bolsa-basura.webp";
+import bolsaBiodegradable from "../img/products/bolsa-biodegradable.webp";
+import bolsaRoja from "../img/products/bolsa-roja.webp";
+import bolsaCristal from "../img/products/bolsa-cristal.webp";
+import bolsaZiploc from "../img/products/bolsa-ziploc.webp";
+import bolsaConAsa from "../img/products/bolsa-con-asa.webp";
+import bolsaMineria from "../img/products/bolsa-mineria.webp";
+import bolsaRollo from "../img/products/bolsa-rollo.webp";
+import bolsaAlmacigo from "../img/products/bolsa-almacigo_1.webp";
+import bolsaHielo from "../img/products/bolsa-hielo.webp";
+import bolsaVacio from "../img/products/bolsa-vacio.webp";
+import stretchFilm from "../img/products/strech-film_1.webp";
+import ductTape from "../img/products/duct-tape_1.webp";
+import cintaEmbalaje from "../img/products/cinta-embalaje_1.webp";
+import cintaFragil from "../img/products/cinta-fragil.webp";
+
+import { Transition } from "../components/Transition/Transition";
+import ProductsGrid from "@components/ProductsFilter";
+
+const images = {
+    "src/img/products/bolsa-basura.webp": bolsaBasura,
+    "/products/bolsa-biodegradable.webp": bolsaBiodegradable,
+    "/products/bolsa-roja.webp": bolsaRoja,
+    "/products/bolsa-cristal.webp": bolsaCristal,
+    "/products/bolsa-ziploc.webp": bolsaZiploc,
+    "/products/bolsa-con-asa.webp": bolsaConAsa,
+    "/products/bolsa-mineria.webp": bolsaMineria,
+    "/products/bolsa-rollo.webp": bolsaRollo,
+    "/products/bolsa-almacigo_1.webp": bolsaAlmacigo,
+    "/products/bolsa-hielo.webp": bolsaHielo,
+    "/products/bolsa-vacio.webp": bolsaVacio,
+    "/products/strech-film_1.webp": stretchFilm,
+    "/products/duct-tape_1.webp": ductTape,
+    "/products/cinta-embalaje_1.webp": cintaEmbalaje,
+    "/products/cinta-fragil.webp": cintaFragil,
+} as const;
+---
+
+<Layout
+    title="Plastigesa | Productos"
+    description="Tu aliado en empaques flexibles. Ofrecemos la más alta tecnología en fabricación de bolsas plásticas, soluciones en embalaje y bolsas personalizadas buscando la satisfacción de nuestros clientes. Líderes en la fabricación de bolsas plásticas, cintas de amarre y stretch film, ofreciendo productos de calidad para diversos usos como industrial, agrícola, hogar, oficina, clínicas y hospitales."
+>
+    <Header />
+    <section id="products" class="bg-background py-16 md:py-24">
+        <div class="container mx-auto px-4 max-w-7xl">
+            <!-- Encabezado -->
+            <div class="text-center mb-16">
+                <Transition client:visible>
+                    <h2 class="text-4xl md:text-5xl font-bold mb-4">
+                        Nuestros <span class="text-deg">Productos</span>
+                    </h2>
+                </Transition>
+                <Transition client:visible>
+                    <p class="text-lg md:text-xl text-muted max-w-3xl mx-auto">
+                        Soluciones innovadoras en empaques flexibles para todas
+                        tus necesidades industriales y comerciales.
+                    </p>
+                </Transition>
+            </div>
+
+            <!-- Grid de productos -->
+            <ProductsGrid client:visible products={products} images={images} />
+
+            <!-- CTA final -->
+            <div class="text-center mt-16">
+                <div
+                    class="inline-flex flex-col sm:flex-row gap-4 items-center bg-muted/20 px-8 py-6 rounded-md"
+                >
+                    <div class="text-left">
+                        <h3 class="text-xl font-bold text-foreground mb-1">
+                            ¿No encuentras lo que necesitas?
+                        </h3>
+                        <p class="text-muted dark:text-gray-300">
+                            Contáctanos para productos especiales o medidas
+                            personalizadas
+                        </p>
+                    </div>
+                    <a href="/#contactus" class="button-base">
+                        Solicitar cotización
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <Footer />
+</Layout>

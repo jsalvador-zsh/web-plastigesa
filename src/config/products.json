@@ -1,0 +1,107 @@
+[
+    {
+        "title": "Bolsas de Basura",
+        "image": "/products/bolsa-basura.webp",
+        "description": "Bolsas de basura en variedad de medidas comerciales y espesores en diferentes colores.",
+        "tag": "Bolsa",
+        "features": ["25 LT", "35 LT", "50 LT", "75 LT", "140 LT", "220 LT", "Negro/Azul/Amarillo", "Blanco/Verde/Rojo"]
+    },
+    {
+        "title": "Bolsas Biodegradables",
+        "image": "/products/bolsa-biodegradable.webp",
+        "description": "Bolsas negras biodegradables con fuelle, grandes y de características comerciales.",
+        "tag": "Bolsa",
+        "features": ["220 LT", "Biodegradable", "Con fuelle", "Uso comercial"]
+    },
+    {
+        "title": "Bolsas Rojas",
+        "image": "/products/bolsa-roja.webp",
+        "description": "Bolsas rojas para desechos orgánicos y biológicos.",
+        "tag": "Bolsa",
+        "features": ["75 LT", "Con fuelle", "Uso hospitalario", "Desechos biológicos"]
+    },
+    {
+        "title": "Bolsas Cristal",
+        "image": "/products/bolsa-cristal.webp",
+        "description": "Bolsas transparentes en una gran variedad de medidas.",
+        "tag": "Bolsa",
+        "features": ["Transparente", "Variedad de medidas", "Uso general", "Resistentes"]
+    },
+    {
+        "title": "Bolsas con Cierre ZipLoc",
+        "image": "/products/bolsa-ziploc.webp",
+        "description": "Bolsas herméticas transparentes para almacenar alimentos y accesorios.",
+        "tag": "Bolsa",
+        "features": ["Cierre hermético", "Varios tamaños", "Para alimentos", "Reutilizables"]
+    },
+    {
+        "title": "Bolsas con Asa",
+        "image": "/products/bolsa-con-asa.webp",
+        "description": "Bolsas con asa en medidas comerciales y diversos colores.",
+        "tag": "Bolsa",
+        "features": ["8x12", "12x16", "16x19", "21x24", "27x32", "100 unidades"]
+    },
+    {
+        "title": "Bolsas para Minería",
+        "image": "/products/bolsa-mineria.webp",
+        "description": "Bolsas transparentes para minerales, bolsas gruesas.",
+        "tag": "Bolsa",
+        "features": ["Transparente", "Alta resistencia", "Para minerales", "Espesor grueso"]
+    },
+    {
+        "title": "Bolsas en Rollo",
+        "image": "/products/bolsa-rollo.webp",
+        "description": "Bolsas en rollo en diversas medidas desglosables.",
+        "tag": "Bolsa",
+        "features": ["3x8", "4x8", "5x10", "8x12", "10x15", "12x17", "Desglosables"]
+    },
+    {
+        "title": "Bolsas para Almácigos",
+        "image": "/products/bolsa-almacigo_1.webp",
+        "description": "Bolsas negras para almácigos (con fuelle), para plantas, cultivos y viveros.",
+        "tag": "Bolsa",
+        "features": ["Con fuelle", "Para plantas", "Uso en viveros", "Variedad de medidas"]
+    },
+    {
+        "title": "Bolsas para Hielos",
+        "image": "/products/bolsa-hielo.webp",
+        "description": "Bolsas transparentes diseñadas exclusivamente para hielos.",
+        "tag": "Bolsa",
+        "features": ["Diseño especial", "Resistentes al frío", "Transparentes", "Varios tamaños"]
+    },
+    {
+        "title": "Bolsas al Vacío",
+        "image": "/products/bolsa-vacio.webp",
+        "description": "Bolsas al vacío para almacenar alimentos y mantenerlos frescos.",
+        "tag": "Bolsa",
+        "features": ["Sellado al vacío", "Conserva alimentos", "Kit selladora", "Varios tamaños"]
+    },
+    {
+        "title": "Stretch Film",
+        "image": "/products/strech-film_1.webp",
+        "description": "Plástico estirable transparente en diversas medidas.",
+        "tag": "Plástico",
+        "features": ["3-20 pulgadas", "Transparente", "Alta elasticidad", "Protección carga"]
+    },
+    {
+        "title": "Duct Tape",
+        "image": "/products/duct-tape_1.webp",
+        "description": "Cinta de embalaje súper resistente y alta adhesión.",
+        "tag": "Cinta",
+        "features": ["2x10 yd", "2x30 yd", "Impermeable", "Alta resistencia"]
+    },
+    {
+        "title": "Cinta de Embalaje",
+        "image": "/products/cinta-embalaje_1.webp",
+        "description": "Cintas de embalaje transparente en variedad de medidas.",
+        "tag": "Cinta",
+        "features": ["70-400 yd", "Transparente", "Alta adhesión", "Uso industrial"]
+    },
+    {
+        "title": "Cinta Frágil",
+        "image": "/products/cinta-fragil.webp",
+        "description": "Cinta frágil para embalar envases de productos con contenido frágil.",
+        "tag": "Cinta",
+        "features": ["Advertencia", "Protección", "Para frágiles", "Fácil identificación"]
+    }
+]

@@ -1,0 +1,30 @@
+---
+import { FloatedForm } from "@components/FloatedForm/FloatedForm";
+import { CiShop } from "react-icons/ci";
+import { Reveal } from "./Reveal";
+---
+<div class="container max-w-6xl mx-auto p-4 relativemd:px-0 py-12 md:py-24">
+    <div class="flex flex-col md:grid md:grid-cols-2 gap-8 md:gap-12 items-center">
+        <!-- Contenido del banner -->
+        <div class="max-w-3xl px-4 md:px-0 text-accent order-1 md:order-none">
+            <Reveal client:visible>
+                <h2 class="text-5xl md:text-6xl lg:text-7xl text-foreground font-extrabold text-center md:text-left mb-6 md:mb-8">
+                Tu aliado en <span class="text-deg">empaques</span> flexibles
+            </h2>
+            </Reveal>
+            <Reveal client:visible>
+                <p class="mb-6 md:mb-8 text-center md:text-left text-muted text-lg md:text-xl text-pretty">
+                Ofrecemos la más alta tecnología en fabricación de bolsas plásticas, soluciones en embalaje y bolsas personalizadas buscando la satisfacción de nuestros clientes.
+            </p>
+                <div class="text-center md:text-left">
+                    <a class="button-icon-secondary" href="#atention"> <CiShop size={25} />Solicite una cotización</a>
+                </div>
+            </Reveal>
+        </div>
+        
+        <!-- Formulario flotante -->
+        <div id="contactus" class="w-full order-2 md:order-none hidden md:block" >
+            <FloatedForm client:visible />
+        </div>
+    </div>
+</div>

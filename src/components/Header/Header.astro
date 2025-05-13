@@ -1,0 +1,138 @@
+---
+import { Icon } from "astro-icon/components";
+import { AnimatePresence, motion } from "framer-motion";
+import { dataHeader } from "@components/Header/Header.data";
+
+const animationNavbar = {
+  initial: {
+    y: -20,
+    opacity: 0
+  },
+  animate: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      stiffness: 100,
+      damping: 20,
+      type: "spring"
+    }
+  },
+  exit: {
+    y: -20,
+    opacity: 0
+  }
+};
+---
+
+<div
+    id="navbar"
+    class="container max-w-6xl mx-auto p-4 transition-all duration-300"
+>
+    <div class="flex items-center justify-between" id="navbar-content">
+        <a id="logo" href="/" class="flex-shrink-0 z-50">
+            <h1 class="text-xl font-bold transition-all duration-300">
+                Plastigesa
+            </h1>
+        </a>
+
+        <div class="md:hidden flex items-center gap-4 z-50">
+            <Icon
+                id="btn-menu"
+                name="heroicons:bars-3-bottom-right-16-solid"
+                class="text-2xl cursor-pointer"
+            />
+        </div>
+
+        <AnimatePresence client:visible>
+            <div
+                id="menu-container"
+                class="absolute top-12 left-0 right-0 bg-opacity-90 backdrop-blur-sm md:backdrop-blur-none md:bg-transparent md:static md:items-center md:gap-4 md:w-auto hidden md:block"
+            >
+                <ul
+                    class="flex flex-col p-4 md:p-0 md:flex-row md:space-x-8 md:space-y-0 space-y-4"
+                >
+                    {
+                        dataHeader.map(({ name, link }) => (
+                            <li class="m-0">
+                                <a
+                                    href={link}
+                                    class="block py-2 px-3 hover:text-accent transition-colors"
+                                >
+                                    {name}
+                                </a>
+                            </li>
+                        ))
+                    }
+                </ul>
+            </div>
+        </AnimatePresence>
+        <div class="hidden md:flex items-center gap-6 z-50">
+            <a
+                href="tel:+51949195 883"
+                class="flex items-center gap-2 hover:text-accent transition-colors"
+            >
+                <Icon
+                    name="heroicons:phone-arrow-up-right-16-solid"
+                    class="text-xl"
+                />
+                <span id="phone">+51 949 195 883</span>
+            </a>
+            <a class="button-base" href="#contactus">Contáctanos</a>
+        </div>
+    </div>
+</div>
+
+<script is:inline>
+    document.addEventListener("DOMContentLoaded", () => {
+        const btnMenu = document.getElementById("btn-menu");
+        const menuContainer = document.getElementById("menu-container");
+        const navbar = document.getElementById("navbar");
+        const logo = document.getElementById("logo");
+        const phone = document.getElementById("phone");
+        const navbarContent = document.getElementById("navbar-content");
+
+        if (btnMenu && menuContainer) {
+            btnMenu.addEventListener('click', () => {
+                menuContainer.classList.toggle('hidden');
+                // menuContainer.classList.toggle('block');
+            });
+        }
+
+        window.addEventListener("scroll", () => {
+            const threshold = window.innerHeight - 600;
+            if (window.scrollY >= threshold) {
+                navbar.classList.add(
+                    "md:w-auto",
+                    "md:sticky",
+                    "md:top-10",
+                    "md:z-50",
+                    "md:backdrop-blur",
+                    "md:bg-gray-400/40",
+                    "md:shadow-md",
+                    "md:rounded-lg",
+                    "md:py-2",
+                );
+                logo.classList.add("hidden");
+                phone.classList.add("hidden");
+                navbarContent.classList.remove("justify-between");
+                navbarContent.classList.add("justify-center");
+            } else {
+                navbar.classList.remove(
+                    "md:w-auto",
+                    "md:sticky",
+                    "md:top-10",
+                    "md:z-50",
+                    "md:backdrop-blur",
+                    "md:bg-gray-400/40",
+                    "md:shadow-md",
+                    "md:rounded-lg",
+                    "md:py-2",
+                );
+                logo.classList.remove("hidden");
+                phone.classList.remove("hidden");
+                navbarContent.classList.remove("justify-center");
+                navbarContent.classList.add("justify-between");
+            }
+        });
+    });
+</script>

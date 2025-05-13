@@ -1,0 +1,90 @@
+---
+import { Image } from "astro:assets";
+import ImageQr1 from "../img/qr-1.webp";
+import ImageQr2 from "../img/qr-2.webp";
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+import { FaHeadset } from "react-icons/fa";
+import { Transition } from "./Transition";
+import Map from "@components/Map.astro";
+import { Reveal } from "./Reveal";
+---
+
+<section
+    class="relative bg-background py-16 md:py-24 overflow-hidden"
+    id="atention"
+>
+    <div class="container mx-auto px-4 max-w-6xl relative z-10">
+        <Transition client:visible>
+            <div class="text-center mb-12">
+                <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
+                    Nuestros puntos de <span class="text-deg">atención</span>
+                </h2>
+                <p class="text-lg md:text-xl text-muted max-w-3xl mx-auto">
+                    Contamos con oficinas y tiendas para mayor comodidad de
+                    nuestros clientes, con la seguridad de despacho a donde lo
+                    requiera.
+                </p>
+            </div>
+        </Transition>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+            <Transition client:visible>
+                <Map client:visible />
+            </Transition>
+
+            <Reveal client:visible>
+                <div
+                    class="p-6 md:p-8 rotate-2"
+                >
+                    <div
+                        class="flex flex-col md:flex-row items-center justify-center gap-6 mb-4"
+                    >
+                        <div class="text-center">
+                            <Image
+                                src={ImageQr1}
+                                alt="QR Atención al cliente"
+                                width={200}
+                                height={200}
+                                class="mx-auto p-3 border-2 border-accent/80 rounded-md shadow-md hover:shadow-md transition-shadow"
+                            />
+                        </div>
+                        <div class="text-center">
+                            <Image
+                                src={ImageQr2}
+                                alt="QR Whatsapp"
+                                width={200}
+                                height={200}
+                                class="mx-auto p-3 border-2 border-accent/80 rounded-md shadow-md hover:shadow-md transition-shadow"
+                            />
+                        </div>
+                    </div>
+                    <p class="text-center text-sm text-foreground mb-4">
+                        Escanea para contacto directo
+                    </p>
+
+                    <div class="bg-accent/10 rounded-md p-4 md:p-6">
+                        <div class="flex items-start gap-4">
+                            <FaHeadset
+                                className="text-2xl text-accent mt-1 flex-shrink-0"
+                            />
+                            <div>
+                                <h3
+                                    class="text-xl font-semibold text-foreground mb-2"
+                                >
+                                    Atención Personalizada
+                                </h3>
+                                <p class="text-foreground">
+                                    Nuestros asesores están listos para ayudarte
+                                    a realizar tu pedido y gestionar el despacho
+                                    directamente hasta tu puerta.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </Reveal>
+        </div>
+    </div>
+</section>

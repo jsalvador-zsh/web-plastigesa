@@ -1,0 +1,78 @@
+---
+import { Image } from "astro:assets";
+import products from "../config/products.json";
+import { CiShoppingTag } from "react-icons/ci";
+
+import bolsaBasura from "../img/products/bolsa-basura.webp";
+import bolsaBiodegradable from "../img/products/bolsa-biodegradable.webp";
+import bolsaRoja from "../img/products/bolsa-roja.webp";
+import bolsaCristal from "../img/products/bolsa-cristal.webp";
+import bolsaZiploc from "../img/products/bolsa-ziploc.webp";
+import bolsaConAsa from "../img/products/bolsa-con-asa.webp";
+import { Transition } from "./Transition";
+
+const images = {
+  "../img/products/bolsa-basura.webp": bolsaBasura,
+  "../img/products/bolsa-biodegradable.webp": bolsaBiodegradable,
+  "../img/products/bolsa-roja.webp": bolsaRoja,
+  "../img/products/bolsa-cristal.webp": bolsaCristal,
+  "../img/products/bolsa-ziploc.webp": bolsaZiploc,
+  "../img/products/bolsa-con-asa.webp": bolsaConAsa,
+} as const;
+---
+
+<section id="products" class="container mx-auto max-w-6xl px-4 md:px-6 py-12 lg:py-20">
+    <div class="text-center mb-12">
+        <Transition client:visible>
+            <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">Nuestra línea de <span class="text-deg">productos</span></h2>
+        </Transition>
+        <Transition client:visible>
+            <p class="text-lg md:text-xl text-muted mx-auto">
+            Soluciones innovadoras en empaques flexibles para todas tus necesidades industriales y comerciales.
+        </p>
+        </Transition>
+    </div>
+    
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
+      {products.slice(0, 6).map((product) => (
+        <Transition client:visible>
+            <article class="group relative overflow-hidden rounded-md shadow-lg hover:shadow-xl transition-all duration-300 bg-white border border-gray-100 hover:-translate-y-1">
+            <div class="relative h-60 overflow-hidden">
+                <img 
+                    src={product.image.replace('../img/', '/img/')} 
+                    alt={`Imagen del producto ${product.title}`}
+                    width={600}
+                    height={400}
+                    class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    loading="lazy"
+                />
+                <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4">
+                    <span class="inline-flex items-center px-3 py-1 rounded-md text-sm font-medium bg-muted text-background">
+                        {product.tag}
+                    </span>
+                </div>
+            </div>
+            
+            <div class="p-5">
+                <h3 class="text-xl md:text-2xl font-bold text-gray-800 mb-2">{product.title}</h3>
+                <p class="text-gray-600 mb-4 line-clamp-3">{product.description}</p>
+                
+                <div class="flex flex-wrap gap-2 mt-4">
+                    {product.features?.map((feature) => (
+                        <span class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium bg-muted/20 text-accent">
+                            {feature}
+                        </span>
+                    ))}
+                </div>
+            </div>
+        </article>
+        </Transition>
+      ))}
+    </div>
+    
+    <div class="text-center mt-12">
+        <div class="text-center">
+                    <a class="button-icon-secondary" href="/products"> <CiShoppingTag size={25} />Ver más productos</a>
+        </div>
+    </div>
+</section>
