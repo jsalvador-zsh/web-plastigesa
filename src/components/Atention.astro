@@ -7,6 +7,7 @@ import { FaHeadset } from "react-icons/fa";
 import { Transition } from "./Transition";
 import Map from "@components/Map.astro";
 import { Reveal } from "./Reveal";
+import { FloatedForm } from "./FloatedForm";
 ---
 
 <section
@@ -14,7 +15,7 @@ import { Reveal } from "./Reveal";
     id="atention"
 >
     <div class="container mx-auto px-4 max-w-6xl relative z-10">
-        <Transition client:visible>
+        <Transition client:load>
             <div class="text-center mb-12">
                 <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
                     Nuestros puntos de <span class="text-deg">atención</span>
@@ -28,11 +29,11 @@ import { Reveal } from "./Reveal";
         </Transition>
 
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-            <Transition client:visible>
+            <Transition client:load>
                 <Map />
             </Transition>
 
-            <Reveal client:visible>
+            <Reveal client:load>
                 <div
                     class="p-6 md:p-8 rotate-2"
                 >
@@ -84,5 +85,8 @@ import { Reveal } from "./Reveal";
                 </div>
             </Reveal>
         </div>
+    </div>
+    <div id="contactus" class="w-full order-2 md:order-none block md:hidden" >
+        <FloatedForm client:load />
     </div>
 </section>

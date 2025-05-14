@@ -3,7 +3,7 @@ import { dataCounter } from "./CounterData.data";
 import MotionTransition from "@components/MotionTransition/MotionTransition";
 ---
 
-<MotionTransition className="container mx-auto px-4 max-w-6xl pt-16 md:pt-24" client:visible>
+<MotionTransition className="container mx-auto px-4 max-w-6xl pt-16 md:pt-24" client:load>
   <div class="justify-evenly md:flex">
     {dataCounter.map(({ endNumber, text, description }) => (
       <div class="py-5 text-4xl md:text-5xl mb-2 md:mb-4 lg:text-6xl text-center tracking-tight leading-none">

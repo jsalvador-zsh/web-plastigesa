@@ -12,13 +12,13 @@ import CounterData from "@components/CounterData/CounterData.astro";
         class="grid grid-cols-1 md:grid-cols-2 items-center justify-center gap-4"
     >
         <div class="text-center md:text-left">
-            <Reveal client:visible>
+            <Reveal client:load>
                 <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
                     Sobre <span class="text-deg">nosotros</span>
                 </h2>
             </Reveal>
 
-            <Reveal client:visible>
+            <Reveal client:load>
                 <p class="text-lg md:text-xl text-muted max-w-3xl mx-auto">
                     <span class="font-bold text-accent">Plastigesa</span> es una
                     empresa familiar 100% peruana con sede en Arequipa, especialistas
@@ -27,15 +27,15 @@ import CounterData from "@components/CounterData/CounterData.astro";
                 </p>
             </Reveal>
         </div>
-        <MotionTransition client:visible>
-            <StaticCards client:visible />
+        <MotionTransition client:load>
+            <StaticCards client:load />
         </MotionTransition>
     </div>
-    <MotionTransition client:visible>
+    <MotionTransition client:load>
         <CounterData />
     </MotionTransition>
     <div class="container mx-auto px-4 max-w-6xl pt-8 md:pt-12">
-        <Reveal client:visible>
+        <Reveal client:load>
         <p class="text-lg md:text-xl text-muted mx-auto">
             Somos líderes en la fabricación de bolsas plásticas, cintas de
             amarre y stretch film, ofreciendo productos de calidad para diversos

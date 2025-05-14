@@ -1,5 +1,6 @@
 import { Transition } from "@components/Transition/Transition";
 import { FiUser, FiMail, FiPhone, FiMessageSquare } from "react-icons/fi";
+import { FaIdCard } from "react-icons/fa";
 import { motion } from "framer-motion";
 import { useState } from "react";
 
@@ -7,7 +8,7 @@ export function FloatedForm() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    phone: "",
+    ruc: "",
     message: ""
   });
 
@@ -21,8 +22,21 @@ export function FloatedForm() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Lógica para enviar el formulario
-    console.log("Formulario enviado:", formData);
+    
+    // Construir el cuerpo del mensaje
+    const subject = `Consulta de ${formData.name}${formData.ruc ? ` (RUC: ${formData.ruc})` : ''}`;
+    const body = `Nombre/Empresa: ${formData.name}
+  ${formData.ruc ? `RUC: ${formData.ruc}\n` : ''}Correo electrónico: ${formData.email}
+
+  Mensaje:
+  ${formData.message}`;
+
+    // Codificar los componentes para URL
+    const encodedSubject = encodeURIComponent(subject);
+    const encodedBody = encodeURIComponent(body);
+
+    // Abrir el cliente de correo predeterminado
+    window.location.href = `mailto:comercial@plastigesa.com?subject=${encodedSubject}&body=${encodedBody}`;
   };
 
   return (
@@ -58,15 +72,15 @@ export function FloatedForm() {
             
             <div className="relative">
             <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-              <FiPhone className="text-muted" />
+              <FaIdCard className="text-muted" />
             </div>
             <input
               type="tel"
-              name="phone"
-              value={formData.phone}
+              name="ruc"
+              value={formData.ruc}
               onChange={handleChange}
               className="w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-all"
-              placeholder="Teléfono"
+              placeholder="RUC"
             />
           </div>
           </div>

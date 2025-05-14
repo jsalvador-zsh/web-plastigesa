@@ -53,12 +53,12 @@ const images = {
         <div class="container mx-auto px-4 max-w-7xl">
             <!-- Encabezado -->
             <div class="text-center mb-16">
-                <Transition client:visible>
+                <Transition client:load>
                     <h2 class="text-4xl md:text-5xl font-bold mb-4">
                         Nuestros <span class="text-deg">Productos</span>
                     </h2>
                 </Transition>
-                <Transition client:visible>
+                <Transition client:load>
                     <p class="text-lg md:text-xl text-muted max-w-3xl mx-auto">
                         Soluciones innovadoras en empaques flexibles para todas
                         tus necesidades industriales y comerciales.
@@ -67,7 +67,7 @@ const images = {
             </div>
 
             <!-- Grid de productos -->
-            <ProductsGrid client:visible products={products} images={images} />
+            <ProductsGrid client:load products={products} images={images} />
 
             <!-- CTA final -->
             <div class="text-center mt-16">
