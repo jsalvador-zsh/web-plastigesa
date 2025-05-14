@@ -5,7 +5,7 @@ Este proyecto fue creado para **Plastigesa EIRL**, una empresa dedicada a la fab
 Puedes visitar el sitio en [Plastigesa](https://plastigesa.netlify.app/).
 
 <div align="center">
-<a href="https://plastigesa.coom/">
+<a href="https://plastigesa.com/">
 <img src="./public/screenshot-web.png">
 </a>
 <p></p>
